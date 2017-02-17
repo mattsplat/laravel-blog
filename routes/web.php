@@ -12,20 +12,23 @@
 */
 
 Route::get('/', function () {
-    $posts = DB::table('posts')->get();
-    return view('welcome', compact('posts'));
+     $posts = DB::table('posts')->get();
+    return $posts;
     
 });
+Route::get('/posts/{post}/edit', 'PostsController@edit');
 
-Route::get('/posts', function () {
-    $posts = DB::table('posts')->latest()->get();
+Route::get('/posts', 'PostsController@index');
+// Route::get('/posts', function () {
+//     // $posts = DB::table('posts')->latest()->get(); // Query Builder 
+//     $posts = App\Post::all();
+//     return view('posts.index', compact('posts'));
     
-    return view('posts.index', compact('posts'));
+// });
+Route::get('/posts/{post}', 'PostsController@show');
+// Route::get('/posts/{post}', function ($id) {
+//     // $post = DB::table('posts')->find($id);
+//     $post = App\Post::find($id);
+//     return view('posts.show', compact('post'));
     
-});
-Route::get('/posts/{post}', function ($id) {
-    $post = DB::table('posts')->find($id);
-    
-    return view('posts.show', compact('post'));
-    
-});
+// });
