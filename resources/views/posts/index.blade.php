@@ -8,17 +8,17 @@
 
 @foreach( $posts as $post)
  <div class="post-preview">
-                    <a href="/posts/{{$post->id}}">
-                        <h2 class="post-title">
-                            {{$post->title}}
-                        </h2>
-                        <h3 class="post-subtitle">
-                            {{$post->body}}
-                        </h3>
-                    </a>
-                    <p class="post-meta">Posted on {{$post->date}}</p>
-                </div>
-                <hr>  
+    <a href="/posts/{{$post->id}}">
+        <h2 class="post-title">
+            {{$post->title}}
+        </h2></a>
+        <h3 class="post-subtitle">
+            {{$post->body}}
+        </h3>
+    
+    <p class="post-meta">Posted on {{$post->date}}</p>
+</div>
+<hr>  
 @endforeach
                 
                 <!-- Pager -->
@@ -30,6 +30,7 @@
             </div>
         </div>
     </div>
+    
 
     <hr>
 

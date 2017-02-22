@@ -11,14 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-     $posts = DB::table('posts')->get();
-    return $posts;
+// Route::get('/', function () {
+//      $posts = DB::table('posts')->get();
+//     return $posts;
     
-});
+// });
 Route::get('/posts/{post}/edit', 'PostsController@edit');
 
-Route::get('/posts', 'PostsController@index');
+Route::get('/', 'PostsController@index');
 // Route::get('/posts', function () {
 //     // $posts = DB::table('posts')->latest()->get(); // Query Builder 
 //     $posts = App\Post::all();

@@ -34,12 +34,13 @@ class PostsController extends Controller
     }
 
     public function show(Post $post){
-        return view('posts.show', compact('post'));
+         return view('posts.show', compact('post'));
+        
     }
 
     public function edit(Post $post){
-        $categories = App\Category::all();
-        return view('posts.edit', compact('post'), compact($categories));
+        // $categories = App\Category::all();
+        return view('posts.edit', compact('post'));
     }
 
     

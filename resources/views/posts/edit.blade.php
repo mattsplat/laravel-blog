@@ -1,6 +1,8 @@
 @extends('layouts.master')
 
 @section('content')
+<script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+
 <div class="container">
 <form role="form" method="post" action="">
   <div class="form-group">
@@ -12,13 +14,13 @@
     <textarea name="body" class="form-control" placeholder="Enter Post Body" rows="8" cols="40">
       {{$post->body}}
     </textarea>
-    <!--<script>
+    <script>
                 // Replace the <textarea id="body"> with a CKEditor
                 // instance, using default configuration.
                 CKEDITOR.replace('body', {
 		
 	});
-    </script>-->
+    </script>
   </div>
   <div class="form-group">
     <label >Category</label>
